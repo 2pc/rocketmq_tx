@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: stock-service
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        service-name: stock-service
+      host: 127.0.0.1
+      port: 8500
+  datasource:
+    url: jdbc:mysql://localhost:3306/rocket_tx2?serverTimezone=GMT%2B8
+    username: root
+    password: 721000
+    type: com.zaxxer.hikari.HikariDataSource
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+server:
+  port: 8083
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+
+mybatis:
+  type-aliases-package: com.tang.stock.domain
+  mapper-locations: classpath:/mapper/*.xml
